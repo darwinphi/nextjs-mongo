@@ -1,4 +1,4 @@
-db.locations.insert([
+db.locations.insertMany([
   {
     address: "6220 Avenue U",
     zipcode: "NY 11234",
@@ -9,7 +9,6 @@ db.locations.insert([
     on_wishlist: [],
     location_id: "56018",
   },
-
   {
     address: "405 Lexington Avenue",
     zipcode: "NY 10174",

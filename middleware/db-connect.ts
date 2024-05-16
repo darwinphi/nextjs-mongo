@@ -26,6 +26,8 @@ async function dbConnect(): Promise<any> {
       socketTimeoutMS: 20000,
     };
 
+    console.log(MONGO_URI);
+
     cached.promise = mongoose
       .connect(MONGO_URI, opts)
       .then((mongoose) => mongoose)

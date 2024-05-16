@@ -11,6 +11,7 @@ async function findLocations(
 ): Promise<LocationType[] | []> {
   try {
     let result: Array<LocationType | undefined> = await Locations.find(filter);
+    console.log("Locations", result);
     return result as LocationType[];
   } catch (err) {
     console.log(err);
