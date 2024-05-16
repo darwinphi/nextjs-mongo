@@ -29,11 +29,13 @@ const LocationDetail = (props: PropsInterface): JSX.Element => {
 
   const wishlistAction = (props: WishlistInterface) => {
     const { locationId, userId } = props;
+
     if (loading) {
       return false;
     }
     setLoading(true);
     let action = !onWishlist ? "addWishlist" : "removeWishlist";
+
     fetch("/api/graphql", {
       method: "POST",
       headers: {
@@ -91,8 +93,8 @@ const LocationDetail = (props: PropsInterface): JSX.Element => {
           disabled={loading ? true : false}
           clickHandler={() =>
             wishlistAction({
-              locationId: session?.user.fdlst_private_userId,
-              userId: session?.user?.userId,
+              locationId: location.location_id,
+              userId: session?.user.fdlst_private_userId,
             })
           }
         >
